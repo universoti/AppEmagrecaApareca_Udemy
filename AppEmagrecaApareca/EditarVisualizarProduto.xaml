@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEmagrecaApareca.EditarVisualizarProduto"
+             Title="Editar Visualizar Produto">
+    <VerticalStackLayout Margin="10">
+        <Label 
+            Text="Visualizar e Editar Produto"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Descrição"/>
+        <Entry Placeholder="Digite o nome do ingrediente" x:Name="Nome"/>
+
+        <Label Text="Quantidade"/>
+        <Entry Placeholder="Digite  Quantidade do ingrediente" x:Name="Quantidade"/>
+
+        <Label Text="Unidade"/>
+        <Entry Placeholder="Digite  Unidade do ingrediente" x:Name="Unidade"/>
+
+        <Label Text="Calorias"/>
+        <Entry Placeholder="Digite  Calorias do ingrediente" x:Name="Calorias"/>
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Button x:Name="SalvarProd" Text="Salvar" Clicked="OnClickCadastrar"  HorizontalOptions="Start" Margin="10" />
+        </HorizontalStackLayout>
+
+       
+
+    </VerticalStackLayout>
+    
+    
+    
+</ContentPage>

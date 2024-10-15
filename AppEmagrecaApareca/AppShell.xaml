@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppEmagrecaApareca.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppEmagrecaApareca"
+    Shell.FlyoutBehavior="Flyout"
+    Title="AppEmagrecaApareca">
+
+    <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate local:TelaInicio}"
+        Route="TelaInicio" 
+        Icon="home.png"
+        />
+
+    <ShellContent
+    Title="Perfil de Usuário"
+    ContentTemplate="{DataTemplate local:PerfilUsu}"
+    Route="PerfilUsu" 
+    Icon="perfil_imagem.jpg"    
+        />
+
+    <ShellContent
+ Title="Tipo de Refeições"
+ ContentTemplate="{DataTemplate local:TipoRefeicoes}"
+ Route="TipoRefeicoes" 
+ Icon="tiporefeicoes.png"    
+     />
+
+    <ShellContent
+Title="Cardápio"
+ContentTemplate="{DataTemplate local:Produtos}"
+Route="Produtos" 
+Icon="cardapiomaui.png"    
+    />
+
+
+    <ShellContent
+Title="Alimentação Diária"
+ContentTemplate="{DataTemplate local:AlimentacaoDiaria}"
+Route="AlimentacaoDiaria" 
+Icon="talhernovo.png"    
+    />
+
+    <ShellContent
+Title="Saldo de Calorias"
+ContentTemplate="{DataTemplate local:SaldoCalorias}"
+Route="SaldoCalorias" 
+Icon="saldobalanca.png"    
+    />
+
+    <ShellContent
+Title="Configurações"
+ContentTemplate="{DataTemplate local:Configuracoes}"
+Route="Configuracoes" 
+Icon="configuracoes.png"    
+    />
+
+
+</Shell>
