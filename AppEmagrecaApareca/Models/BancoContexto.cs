@@ -16,12 +16,14 @@ namespace AppEmagrecaApareca.Models
         public DbSet<PerfilUsuario> PerfilUsuarios { get; set; }
         public DbSet<TipoRefeicao> TipoRefeicoes { get; set; }
 
+        public DbSet<LancarRefeicoes> LancarRefeicoes { get; set; }
+
         public DbSet<Produto> Produtos { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string conDb = $"Filename={ConexaoDb.RetornaRota("BancoApp3.db")}";
+            string conDb = $"Filename={ConexaoDb.RetornaRota("BancoApp4.db")}";
             optionsBuilder.UseSqlite(conDb);    
         }
 

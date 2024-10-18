@@ -81,6 +81,9 @@
 	  <MauiXaml Update="Configuracoes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="EditarVisualizarAlimentacaoDiaria.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="EditarVisualizarProduto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
