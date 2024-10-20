@@ -38,7 +38,7 @@
                 Text="Salvar" 
                 HorizontalOptions="Start" 
                 Margin="10"
-                
+                Clicked="OnClickCadastrar"
                 />
 
 
