@@ -149,7 +149,7 @@ public partial class EditarVisualizarAlimentacaoDiaria : ContentPage
             obj.DescricaoRefeicao = tipoRefeicaos.Where(s => s.Id == indtiporefeicao).FirstOrDefault().DsTipoRefeicao;
             obj.QuantidadeLanc = Convert.ToDouble(QuantidadeLanc.Text);
             obj.Calorias = Convert.ToDouble(Calorias.Text);
-            obj.datalanc = DateTime.Now.AddHours(-3);
+            obj.datalanc = DateTime.Now.AddHours(-3)    ;
             Contexto.Entry(obj).State=EntityState.Modified;
         }
 
