@@ -1,4 +1,4 @@
-﻿using AppEmagrecaApareca.Models;
+﻿using AppEmagrecaApareca.Mvvm.Models;
 using Microsoft.Extensions.Logging;
 
 namespace AppEmagrecaApareca

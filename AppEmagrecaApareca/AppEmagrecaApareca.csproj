@@ -75,36 +75,73 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AlimentacaoDiaria.xaml">
+	  <MauiXaml Update="Mvvm\Views\AlimentacaoDiariaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Configuracoes.xaml">
+	  <MauiXaml Update="Mvvm\Views\ConfiguracoesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="EditarVisualizarAlimentacaoDiaria.xaml">
+	  <MauiXaml Update="Mvvm\Views\EditarVisualizarAlimentacaoDiariaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="EditarVisualizarProduto.xaml">
+	  <MauiXaml Update="Mvvm\Views\EditarVisualizarProdutoView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="EditarVisualizarTipoRefeicoes.xaml">
+	  <MauiXaml Update="Mvvm\Views\EditarVisualizarTipoRefeicoesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PerfilUsu.xaml">
+	  <MauiXaml Update="Mvvm\Views\PerfilUsuView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Produtos.xaml">
+	  <MauiXaml Update="Mvvm\Views\ProdutosView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="SaldoCalorias.xaml">
+	  <MauiXaml Update="Mvvm\Views\SaldoCaloriasView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="TelaInicio.xaml">
+	  <MauiXaml Update="Mvvm\Views\TelaInicioView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="TipoRefeicoes.xaml">
+	  <MauiXaml Update="Mvvm\Views\TipoRefeicoesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Mvvm\ViewModels\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Mvvm\Views\AlimentacaoDiariaView.xaml.cs">
+	    <DependentUpon>AlimentacaoDiariaView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\ConfiguracoesView.xaml.cs">
+	    <DependentUpon>ConfiguracoesView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\EditarVisualizarAlimentacaoDiariaView.xaml.cs">
+	    <DependentUpon>EditarVisualizarAlimentacaoDiariaView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\EditarVisualizarProdutoView.xaml.cs">
+	    <DependentUpon>EditarVisualizarProdutoView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\EditarVisualizarTipoRefeicoesView.xaml.cs">
+	    <DependentUpon>EditarVisualizarTipoRefeicoesView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\PerfilUsuView.xaml.cs">
+	    <DependentUpon>PerfilUsuView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\ProdutosView.xaml.cs">
+	    <DependentUpon>ProdutosView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\SaldoCaloriasView.xaml.cs">
+	    <DependentUpon>SaldoCaloriasView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\TelaInicioView.xaml.cs">
+	    <DependentUpon>TelaInicioView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Mvvm\Views\TipoRefeicoesView.xaml.cs">
+	    <DependentUpon>TipoRefeicoesView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

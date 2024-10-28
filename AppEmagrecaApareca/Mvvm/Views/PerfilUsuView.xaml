@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEmagrecaApareca.PerfilUsuView"
+             Title="Perfil">
+    
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout>
+            <VerticalStackLayout>
+                <Image Source="perfil_imagem.png"/>
+                <Label 
+             Text="Seu perfil médico"
+             VerticalOptions="Center" 
+             HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="10">
+                <Label Text="Nome"/>
+                <Entry Placeholder="Digite seu nome completo" x:Name="Nome"/>
+
+                <Label Text="Idade"/>
+                <Entry Placeholder="Idade" x:Name="Idade"/>
+
+                <Label Text="Sexo"/>
+                <Picker x:Name="pickerSexo"
+                 Title="Selecione o sexo"
+                 SelectedIndexChanged="SelSexo"
+                 HorizontalOptions="Start"
+                 FontSize="20"
+                 Background="White"
+                 TextColor="Black"
+                 WidthRequest="400"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Start"
+                        
+                 
+             
+             >
+
+                </Picker>
+
+                <Label Text="Altura"/>
+                <Entry Placeholder="Digite a sua altura em metros" x:Name="Altura"/>
+
+                <Label Text="Peso"/>
+                <Entry Placeholder="Digite o seu peso em Kg" x:Name="Peso"/>
+
+                <Label Text="Recomendacao Calorica"/>
+                <Entry Placeholder="Digite as calorias orientadas pelo medico " x:Name="RecomendacaoCalorica"/>
+
+                <Label Text="Recomendacao de peso"/>
+                <Entry Placeholder="Digite as calorias orientadas pelo medico " x:Name="RecomendacaoPeso"/>
+
+
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+                <Button
+         x:Name="AlterarBtn"
+         Text="Salvar Perfil"
+         Clicked="OnAlterar"           
+         HorizontalOptions="Center"
+         Margin="10"
+         
+         />
+
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+   
+</ContentPage>

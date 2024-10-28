@@ -9,51 +9,51 @@
 
     <ShellContent
         Title="Inicio"
-        ContentTemplate="{DataTemplate local:TelaInicio}"
-        Route="TelaInicio" 
+        ContentTemplate="{DataTemplate local:TelaInicioView}"
+        Route="TelaInicioView" 
         Icon="home.png"
         />
 
     <ShellContent
     Title="Perfil de Usuário"
-    ContentTemplate="{DataTemplate local:PerfilUsu}"
-    Route="PerfilUsu" 
+    ContentTemplate="{DataTemplate local:PerfilUsuView}"
+    Route="PerfilUsuView" 
     Icon="perfil_imagem.jpg"    
         />
 
     <ShellContent
  Title="Tipo de Refeições"
- ContentTemplate="{DataTemplate local:TipoRefeicoes}"
- Route="TipoRefeicoes" 
+ ContentTemplate="{DataTemplate local:TipoRefeicoesView}"
+ Route="TipoRefeicoesView" 
  Icon="tiporefeicoes.png"    
      />
 
     <ShellContent
 Title="Cardápio"
-ContentTemplate="{DataTemplate local:Produtos}"
-Route="Produtos" 
+ContentTemplate="{DataTemplate local:ProdutosView}"
+Route="ProdutosView" 
 Icon="cardapiomaui.png"    
     />
 
 
     <ShellContent
 Title="Alimentação Diária"
-ContentTemplate="{DataTemplate local:AlimentacaoDiaria}"
-Route="AlimentacaoDiaria" 
+ContentTemplate="{DataTemplate local:AlimentacaoDiariaView}"
+Route="AlimentacaoDiariaView" 
 Icon="talhernovo.png"    
     />
 
     <ShellContent
 Title="Saldo de Calorias"
-ContentTemplate="{DataTemplate local:SaldoCalorias}"
-Route="SaldoCalorias" 
+ContentTemplate="{DataTemplate local:SaldoCaloriasView}"
+Route="SaldoCaloriasView" 
 Icon="saldobalanca.png"    
     />
 
     <ShellContent
 Title="Configurações"
-ContentTemplate="{DataTemplate local:Configuracoes}"
-Route="Configuracoes" 
+ContentTemplate="{DataTemplate local:ConfiguracoesView}"
+Route="ConfiguracoesView" 
 Icon="configuracoes.png"    
     />
 

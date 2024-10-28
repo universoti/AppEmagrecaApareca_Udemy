@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEmagrecaApareca.EditarVisualizarAlimentacaoDiariaView"
+             Title="Lançar Alimentacao Diaria">
+    <VerticalStackLayout Margin="10">
+        <Label 
+            Text="Lance aqui o que voce comeu!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Alimento"/>
+        <Picker
+            x:Name="pickerAlimento"
+            HorizontalOptions="Start"
+            WidthRequest="400"
+            HorizontalTextAlignment="Start"
+            SelectedIndexChanged="SelAlimento"
+            />
+
+        <Label Text="Quantidade"/>
+        <Entry IsReadOnly="True" x:Name="QuantidadeLanc" />
+
+        <Label Text="Calorias Consumidas"/>
+        <Entry IsReadOnly="True" x:Name="Calorias" />
+
+        <Label Text="Periodo da Refeição"/>
+        <Picker
+            x:Name="pickerTipoRefeicao"
+            HorizontalOptions="Start"
+            WidthRequest="400"
+            SelectedIndexChanged="SelTipoRefeicao"
+            />
+
+        <HorizontalStackLayout  HorizontalOptions="CenterAndExpand">
+            <Button
+                x:Name="SalvarProd"
+                Text="Salvar" 
+                HorizontalOptions="Start" 
+                Margin="10"
+                Clicked="OnClickCadastrar"
+                />
+
+
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
