@@ -17,10 +17,10 @@
 
             <VerticalStackLayout Margin="10">
                 <Label Text="Nome"/>
-                <Entry Placeholder="Digite seu nome completo" x:Name="Nome"/>
+                <Entry Text="{Binding Nome}" Placeholder="Digite seu nome completo" x:Name="Nome"/>
 
                 <Label Text="Idade"/>
-                <Entry Placeholder="Idade" x:Name="Idade"/>
+                <Entry  Text="{Binding Idade}"  Placeholder="Idade" x:Name="Idade"/>
 
                 <Label Text="Sexo"/>
                 <Picker x:Name="pickerSexo"
@@ -41,16 +41,16 @@
                 </Picker>
 
                 <Label Text="Altura"/>
-                <Entry Placeholder="Digite a sua altura em metros" x:Name="Altura"/>
+                <Entry Text="{Binding Altura}"  Placeholder="Digite a sua altura em metros" x:Name="Altura"/>
 
                 <Label Text="Peso"/>
-                <Entry Placeholder="Digite o seu peso em Kg" x:Name="Peso"/>
+                <Entry  Text="{Binding Peso}" Placeholder="Digite o seu peso em Kg" x:Name="Peso"/>
 
                 <Label Text="Recomendacao Calorica"/>
-                <Entry Placeholder="Digite as calorias orientadas pelo medico " x:Name="RecomendacaoCalorica"/>
+                <Entry  Text="{Binding RecomendacaoCalorica}"  Placeholder="Digite as calorias orientadas pelo medico " x:Name="RecomendacaoCalorica"/>
 
                 <Label Text="Recomendacao de peso"/>
-                <Entry Placeholder="Digite as calorias orientadas pelo medico " x:Name="RecomendacaoPeso"/>
+                <Entry  Text="{Binding RecomendacaoPeso}"  Placeholder="Digite as calorias orientadas pelo medico " x:Name="RecomendacaoPeso"/>
 
 
             </VerticalStackLayout>

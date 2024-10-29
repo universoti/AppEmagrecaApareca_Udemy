@@ -1,4 +1,5 @@
 using AppEmagrecaApareca.Mvvm.Models;
+using AppEmagrecaApareca.Mvvm.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Cryptography;
@@ -13,6 +14,7 @@ public partial class PerfilUsuView : ContentPage
 	public PerfilUsuView()
 	{
 		InitializeComponent();
+		BindingContext = new PerfilUsuViewModel();
 		CarregarTipos();
 		var Contexto = App._Contexto;
         try
