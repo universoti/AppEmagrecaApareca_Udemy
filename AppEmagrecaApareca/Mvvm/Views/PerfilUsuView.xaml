@@ -25,7 +25,7 @@
                 <Label Text="Sexo"/>
                 <Picker x:Name="pickerSexo"
                  Title="Selecione o sexo"
-                 SelectedIndexChanged="SelSexo"
+                 
                  HorizontalOptions="Start"
                  FontSize="20"
                  Background="White"
@@ -33,10 +33,11 @@
                  WidthRequest="400"
                  FontAttributes="Bold"
                  HorizontalTextAlignment="Start"
-                        
-                 
-             
-             >
+                 ItemsSource="{Binding ListarSexo}"
+                 ItemDisplayBinding="{Binding DsSexo,Mode=TwoWay}"       
+                 SelectedIndex="{Binding IdSexo}"
+                 SelectedIndexChanged="SelSexo"
+                 >
 
                 </Picker>
 
@@ -57,14 +58,8 @@
 
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
 
-                <Button
-         x:Name="AlterarBtn"
-         Text="Salvar Perfil"
-         Clicked="OnAlterar"           
-         HorizontalOptions="Center"
-         Margin="10"
-         
-         />
+                <Entry IsVisible="Hidden" x:Name="eds_sexo"/>
+                <Button x:Name="AlterarBtn" Command="{Binding SalvarAlterarCommand}" CommandParameter="{Binding Source={x:Reference eds_sexo},Path=Text}"  Text="Salvar Perfil"  HorizontalOptions="Center" Margin="10"  />
 
             </HorizontalStackLayout>
 
