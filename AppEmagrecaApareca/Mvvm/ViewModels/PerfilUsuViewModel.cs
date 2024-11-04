@@ -40,6 +40,7 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
         public PerfilUsuario CadUsuario { get; set; }   
 
         public PerfilUsuViewModel()
+
         {
             ListarSexo = new SexoModel().lSexo() ;
             ListarUsuario();

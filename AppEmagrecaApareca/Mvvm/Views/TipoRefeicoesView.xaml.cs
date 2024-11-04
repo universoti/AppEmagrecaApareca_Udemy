@@ -1,4 +1,5 @@
 using AppEmagrecaApareca.Mvvm.Models;
+using AppEmagrecaApareca.Mvvm.ViewModels;
 
 namespace AppEmagrecaApareca;
 
@@ -7,7 +8,9 @@ public partial class TipoRefeicoesView : ContentPage
 	public TipoRefeicoesView()
 	{
 		InitializeComponent();
-		lTipoRefeicoes.ItemsSource = App._Contexto.TipoRefeicoes;
+		BindingContext = new TipoRefeicoesViewModel();
+
+		//lTipoRefeicoes.ItemsSource = App._Contexto.TipoRefeicoes;
 
     }
 
@@ -17,19 +20,26 @@ public partial class TipoRefeicoesView : ContentPage
 	}
 
     private async void OnAlterar(object sender, EventArgs e)
-    {
+   {
 		var item = lTipoRefeicoes.SelectedItem as TipoRefeicao;
 
-		if (item!=null)
+		if (item != null)
 		{
-            await Navigation.PushAsync(new EditarVisualizarTipoRefeicoesView(item));
-        }
-		
-    }
+			await Navigation.PushAsync(new EditarVisualizarTipoRefeicoesView(item));
+		}
 
-    private async void OnInicio(object sender, EventArgs e)
+	}
+
+	private async void OnInicio(object sender, EventArgs e)
     {
-		await Navigation.PushAsync(new TelaInicioView());
-
+        //await Navigation.PushAsync(new TelaInicioView());
+        //BindingContext = new TipoRefeicoesViewModel();
+        Shell.Current.GoToAsync("//TelaInicio");  ///arrumar depois não esta funcionando
     }
+
+	private async void AtualizaLista(object sender, EventArgs e)
+	{
+        BindingContext = new TipoRefeicoesViewModel();
+    }
+
 }
