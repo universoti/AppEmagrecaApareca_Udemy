@@ -9,8 +9,10 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+        <Entry IsVisible="Hidden" x:Name="Id" Text="{Binding Id}" />
+
         <Label Text="Descrição"/>
-        <Entry Placeholder="Digite o nome da refeição, exemplo café,almoço..." x:Name="DsTipoRefeicao"/>
+        <Entry Placeholder="Digite o nome da refeição, exemplo café,almoço..." x:Name="DsTipoRefeicao" Text="{Binding DsTipoRefeicao}"/>
 
         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
             <Button

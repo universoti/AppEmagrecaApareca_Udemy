@@ -1,4 +1,5 @@
 using AppEmagrecaApareca.Mvvm.Models;
+using AppEmagrecaApareca.Mvvm.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace AppEmagrecaApareca;
@@ -9,13 +10,16 @@ public partial class EditarVisualizarTipoRefeicoesView : ContentPage
 	public EditarVisualizarTipoRefeicoesView()
 	{
 		InitializeComponent();
-	}
+		BindingContext = new EditarVisualizarTipoRefeicoesViewModel();
+
+    }
 
     public EditarVisualizarTipoRefeicoesView(TipoRefeicao tipoRefeicoes)
     {
         InitializeComponent();
-		_Id = tipoRefeicoes.Id;
-		DsTipoRefeicao.Text = tipoRefeicoes.DsTipoRefeicao;
+        //_Id = tipoRefeicoes.Id;
+        //DsTipoRefeicao.Text = tipoRefeicoes.DsTipoRefeicao;
+        BindingContext = new EditarVisualizarTipoRefeicoesViewModel(tipoRefeicoes);
     }
 
     private async void OnClickCadastrar(object sender, EventArgs e)
