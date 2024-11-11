@@ -1,4 +1,5 @@
 using AppEmagrecaApareca.Mvvm.Models;
+using AppEmagrecaApareca.Mvvm.ViewModels;
 
 namespace AppEmagrecaApareca;
 
@@ -7,8 +8,10 @@ public partial class ProdutosView : ContentPage
 	public ProdutosView()
 	{
 		InitializeComponent();
-		lprodutos.ItemsSource = App._Contexto.Produtos;
-	}
+		//lprodutos.ItemsSource = App._Contexto.Produtos;
+		BindingContext = new ProdutosViewModel();
+
+    }
 
 
 	private async void OnAlterar(object sender, EventArgs e)
@@ -30,6 +33,11 @@ public partial class ProdutosView : ContentPage
     private async void OnInicio(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new TelaInicioView());
+    }
+
+	private async void AtualizaLista(object sender, EventArgs e)
+	{
+        BindingContext = new ProdutosViewModel();
     }
 
 }
