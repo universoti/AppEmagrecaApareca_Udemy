@@ -19,12 +19,16 @@
                 x:Name="SalvarProd"
                 Text="Salvar"
                 HorizontalOptions="Start"
-                Clicked="OnClickCadastrar"
+                Command="{Binding CadastrarAtualizarCommand}"
                 Margin="10"
                 
                 />
 
         </HorizontalStackLayout>
 
+        <HorizontalStackLayout>
+            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" TextColor="DarkBlue" FontAttributes="Bold" Text="{Binding MsgRetorno}"/>
+        </HorizontalStackLayout>
+        
     </VerticalStackLayout>
 </ContentPage>
