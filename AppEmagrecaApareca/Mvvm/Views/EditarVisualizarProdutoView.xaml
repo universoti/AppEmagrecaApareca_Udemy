@@ -9,20 +9,22 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+        <Entry IsVisible="Hidden" x:Name="Id" Text="{Binding Id}"/>
+
         <Label Text="Descrição"/>
-        <Entry Placeholder="Digite o nome do ingrediente" x:Name="Nome"/>
+        <Entry Placeholder="Digite o nome do ingrediente" x:Name="Nome"  Text="{Binding Nome}"/>
 
         <Label Text="Quantidade"/>
-        <Entry Placeholder="Digite  Quantidade do ingrediente" x:Name="Quantidade"/>
+        <Entry Placeholder="Digite  Quantidade do ingrediente" x:Name="Quantidade" Text="{Binding Quantidade}"/>
 
         <Label Text="Unidade"/>
-        <Entry Placeholder="Digite  Unidade do ingrediente" x:Name="Unidade"/>
+        <Entry Placeholder="Digite  Unidade do ingrediente" x:Name="Unidade" Text="{Binding Unidade}"/>
 
         <Label Text="Calorias"/>
-        <Entry Placeholder="Digite  Calorias do ingrediente" x:Name="Calorias"/>
+        <Entry Placeholder="Digite  Calorias do ingrediente" x:Name="Calorias" Text="{Binding Calorias}"/>
 
         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-            <Button x:Name="SalvarProd" Text="Salvar" Clicked="OnClickCadastrar"  HorizontalOptions="Start" Margin="10" />
+                <Button x:Name="SalvarProd" Text="Salvar" Command="{Binding CadastrarAtualizarCommand}"  HorizontalOptions="Start" Margin="10" />
         </HorizontalStackLayout>
 
        

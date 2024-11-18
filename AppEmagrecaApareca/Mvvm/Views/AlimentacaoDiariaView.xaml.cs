@@ -1,4 +1,5 @@
 using AppEmagrecaApareca.Mvvm.Models;
+using AppEmagrecaApareca.Mvvm.ViewModels;
 
 namespace AppEmagrecaApareca;
 
@@ -7,8 +8,8 @@ public partial class AlimentacaoDiariaView : ContentPage
 	public AlimentacaoDiariaView()
 	{
 		InitializeComponent();
-
-        lAlimentacao.ItemsSource = App._Contexto.LancarRefeicoes.Where(s=>s.datalanc>=DateTime.Now.Date).ToList();	
+		BindingContext = new AlimentacaoDiariaViewModel();
+        ///lAlimentacao.ItemsSource = App._Contexto.LancarRefeicoes.Where(s=>s.datalanc>=DateTime.Now.Date).ToList();	
 	}
 
 	private async void OnAlterar(object sender, EventArgs e)
@@ -30,5 +31,10 @@ public partial class AlimentacaoDiariaView : ContentPage
     private async void OnInicio(object sender, EventArgs e)
     {
 		await Navigation.PushAsync(new TelaInicioView());
+    }
+
+	private void AtualizarTela(object sender, EventArgs e)
+	{
+        BindingContext = new AlimentacaoDiariaViewModel();
     }
 }
