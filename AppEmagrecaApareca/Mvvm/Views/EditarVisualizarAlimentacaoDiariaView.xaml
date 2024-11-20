@@ -16,13 +16,18 @@
             WidthRequest="400"
             HorizontalTextAlignment="Start"
             SelectedIndexChanged="SelAlimento"
+            ItemsSource="{Binding produtos}"
+            ItemDisplayBinding="{Binding Nome}"
+            SelectedIndex="{Binding Id_indice}"
             />
 
+        <Entry IsVisible="Hidden" Text="{Binding Id}"/>
+        
         <Label Text="Quantidade"/>
-        <Entry IsReadOnly="True" x:Name="QuantidadeLanc" />
+        <Entry IsReadOnly="True" x:Name="QuantidadeLanc" Text="{Binding QuantidadeLanc}" />
 
         <Label Text="Calorias Consumidas"/>
-        <Entry IsReadOnly="True" x:Name="Calorias" />
+        <Entry IsReadOnly="True" x:Name="Calorias"  Text="{Binding Calorias}"  />
 
         <Label Text="Periodo da Refeição"/>
         <Picker
@@ -30,6 +35,9 @@
             HorizontalOptions="Start"
             WidthRequest="400"
             SelectedIndexChanged="SelTipoRefeicao"
+            ItemsSource="{Binding tipoRefeicaos}"
+            ItemDisplayBinding="{Binding DsTipoRefeicao}"
+            SelectedIndex="{Binding Id_indice_tiporefeicao}"
             />
 
         <HorizontalStackLayout  HorizontalOptions="CenterAndExpand">
@@ -38,9 +46,11 @@
                 Text="Salvar" 
                 HorizontalOptions="Start" 
                 Margin="10"
-                Clicked="OnClickCadastrar"
+                Command="{Binding CadastrarAtualizarCommand}"
                 />
 
+
+            <Button x:Name="ExcluirProd" Text="Exclui" HorizontalOptions="End" Margin="10" Command="{Binding ExcluirCommand}" />
 
         </HorizontalStackLayout>
 

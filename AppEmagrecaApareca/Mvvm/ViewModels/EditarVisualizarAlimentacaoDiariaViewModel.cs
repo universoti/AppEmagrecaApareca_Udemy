@@ -1,5 +1,6 @@
 ﻿using AppEmagrecaApareca.Mvvm.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,7 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
             DescricaoRefeicao = lancarRefeicoes.DescricaoRefeicao;
             Datalanc = lancarRefeicoes.datalanc;
             Calorias = lancarRefeicoes.Calorias;
-            IdTipoRefeicao=produtos.Where(s=>s.Id==Iproduto).FirstOrDefault().Indice;
+            Id_indice=produtos.Where(s=>s.Id==Iproduto).FirstOrDefault().Indice;
             Id_indice_tiporefeicao=tipoRefeicaos.Where(s=>s.Id==IdTipoRefeicao).FirstOrDefault().Indice; 
 
         }
@@ -114,7 +115,7 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
         }
 
 
-
+        [RelayCommand]
         private void CadastrarAtualizar()
         {
             var Contexto = App._Contexto;
@@ -124,29 +125,61 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
                 LancarRefeicoes refeicoes = new LancarRefeicoes();
                 refeicoes.Id = Id;
                 refeicoes.QuantidadeLanc = QuantidadeLanc;
-                refeicoes.DescricaoProduto = produtos.Where(s => s.Id == Iproduto).FirstOrDefault().Nome;
-                refeicoes.DescricaoRefeicao = tipoRefeicaos.Where(s => s.Id == IdTipoRefeicao).FirstOrDefault().DsTipoRefeicao;
-                refeicoes.Iproduto = Iproduto;
-                refeicoes.IdTipoRefeicao = IdTipoRefeicao;
+                refeicoes.DescricaoProduto = produtos.Where(s => s.Indice == Id_indice).FirstOrDefault().Nome;
+                refeicoes.DescricaoRefeicao = tipoRefeicaos.Where(s => s.Indice == Id_indice_tiporefeicao).FirstOrDefault().DsTipoRefeicao;
+                refeicoes.Iproduto = produtos.Where(s => s.Indice == Id_indice).FirstOrDefault().Id;
+                refeicoes.IdTipoRefeicao = tipoRefeicaos.Where(s => s.Indice == Id_indice_tiporefeicao).FirstOrDefault().Id;
                 refeicoes.datalanc = DateTime.Now;
                 refeicoes.Calorias = Calorias;
+                
                 Contexto.Add(refeicoes);
             }
             else
             {
                 var obj = Contexto.LancarRefeicoes.Where(s => s.Id == Id).FirstOrDefault();
                 obj.Id = Id;
-                obj.DescricaoProduto = produtos.Where(s => s.Id == Iproduto).FirstOrDefault().Nome;
-                obj.DescricaoRefeicao = tipoRefeicaos.Where(s => s.Id == IdTipoRefeicao).FirstOrDefault().DsTipoRefeicao;
+                obj.DescricaoProduto = produtos.Where(s => s.Indice == Id_indice).FirstOrDefault().Nome;
+                obj.DescricaoRefeicao = tipoRefeicaos.Where(s => s.Indice == Id_indice_tiporefeicao).FirstOrDefault().DsTipoRefeicao;
+                obj.Iproduto = produtos.Where(s => s.Indice == Id_indice).FirstOrDefault().Id;
+                obj.IdTipoRefeicao = tipoRefeicaos.Where(s => s.Indice == Id_indice_tiporefeicao).FirstOrDefault().Id;
                 obj.QuantidadeLanc = QuantidadeLanc;
                 obj.Calorias = Calorias;
                 obj.datalanc = DateTime.Now;
+
                 Contexto.Entry(obj).State = EntityState.Modified;
             }
 
             Contexto.SaveChanges();
             Shell.Current.DisplayAlert("Registro salvo", "Lançamento salvo com sucesso!", "OK");
             ///await Navigation.PushAsync(new AlimentacaoDiariaView(), false);
+            var stack = Shell.Current.Navigation.NavigationStack.ToArray();
+            for (int i = stack.Length - 1; i > 0; i--)
+            {
+                Shell.Current.Navigation.RemovePage(stack[i]);
+            }
+
+            Shell.Current.GoToAsync("//TelaInicio");
+        }
+
+        [RelayCommand]
+        private void Excluir()
+        {
+            var Contexto = App._Contexto;
+            if (Id!=0)
+            {
+                var obj = Contexto.LancarRefeicoes.Where(s => s.Id == Id).FirstOrDefault();
+                Contexto.Entry(obj).State = EntityState.Deleted;
+                Contexto.SaveChanges();
+            }
+            Shell.Current.DisplayAlert("Registro excluido", "Lançamento excluído com sucesso!", "OK");
+            var stack = Shell.Current.Navigation.NavigationStack.ToArray();
+            for (int i = stack.Length - 1; i > 0; i--)
+            {
+                Shell.Current.Navigation.RemovePage(stack[i]);
+            }
+
+            Shell.Current.GoToAsync("//TelaInicio");
+
 
         }
 
