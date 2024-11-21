@@ -3,55 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEmagrecaApareca.SaldoCaloriasView"
              Title="Saldo de Calorias">
-    <ScrollView Orientation="Vertical">
-        <VerticalStackLayout>
+    <RefreshView  Command="{Binding CarregarSaldosCommand}" IsRefreshing="{Binding IsRefreshing}" Loaded="AtualizaInfoTel">
 
-            <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="Lime">
-                <Label Margin="12" Text="Calorias Recomencadas"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Label x:Name="lcaloriasRecomendada" Text="100" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+        <ScrollView Orientation="Vertical">
+            <VerticalStackLayout>
 
-            </VerticalStackLayout>
+                <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="Lime">
+                    <Label Margin="12" Text="Calorias Recomencadas"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label x:Name="lcaloriasRecomendada" Text="{Binding LcaloriasRecomendada}" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
 
-            <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="OrangeRed">
-                <Label Margin="12" Text="Calorias Consumidas"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Label x:Name="lcaloriasConsumidas" Text="100" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                </VerticalStackLayout>
 
-            </VerticalStackLayout>
+                <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="OrangeRed">
+                    <Label Margin="12" Text="Calorias Consumidas"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label x:Name="lcaloriasConsumidas" Text="{Binding LcaloriasConsumidas}" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
 
-            <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="DarkCyan">
-                <Label Margin="12" Text="Saldo"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Label x:Name="lSaldo" Text="100" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                </VerticalStackLayout>
 
-            </VerticalStackLayout>
+                <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="DarkCyan">
+                    <Label Margin="12" Text="Saldo"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label x:Name="lSaldo" Text="{Binding LSaldo}" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
 
-            <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="Gray">
-                <VerticalStackLayout Margin="5">
-                    <Label Margin="12" Text="Progresso do dia"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Label  x:Name="nporcet" Text="30%" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                </VerticalStackLayout>
 
-                    <ProgressBar  x:Name="Porcetagem"
-                                      Progress="0.5"
-                                      HeightRequest="50"
-                    />
+                <VerticalStackLayout Margin="10" HeightRequest="130" BackgroundColor="Gray">
+                    <VerticalStackLayout Margin="5">
+                        <Label Margin="12" Text="Progresso do dia"  FontAttributes="Bold"  FontSize="20" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label  x:Name="nporcet" Text="{Binding Nporcet}" FontSize="30" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                        <ProgressBar  x:Name="Porcetagem"                                  
+                                  HeightRequest="50"
+                                  Progress="{Binding Porcetagem_Progress}"  
+                                  ProgressColor="{Binding Porcetagem_ProgressColor}"    
+                />
                     </VerticalStackLayout>
 
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout  HorizontalOptions="CenterAndExpand">
+                    <Button
+         x:Name="FecharBtn"
+         Text="Fechar" 
+         Command="{Binding FecharCommand}"
+         HorizontalOptions="Start" 
+         Margin="10"
+ 
+         />
+
+
+
+                </HorizontalStackLayout>
+
             </VerticalStackLayout>
+        </ScrollView>
 
-            <HorizontalStackLayout  HorizontalOptions="CenterAndExpand">
-                <Button
-             x:Name="FecharBtn"
-             Text="Fechar" 
-             Clicked="Fechar"
-             HorizontalOptions="Start" 
-             Margin="10"
-     
-             />
-
-
-
-            </HorizontalStackLayout>
-
-        </VerticalStackLayout>
-    </ScrollView>
+    </RefreshView>
+    
+    
    
 </ContentPage>

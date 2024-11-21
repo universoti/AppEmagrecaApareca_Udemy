@@ -69,7 +69,7 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
             {
                 _porcetagem_ProgressColor = Colors.Red;
             }
-
+            IsRefreshing = false;    
         }
 
         [RelayCommand]

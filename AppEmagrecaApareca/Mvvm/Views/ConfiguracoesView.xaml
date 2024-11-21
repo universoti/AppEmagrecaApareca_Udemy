@@ -17,7 +17,7 @@
         <VerticalStackLayout BackgroundColor="GreenYellow" Margin="10" HeightRequest="150">
             <Button x:Name="NovoBtn" 
                     Text="Carregar informações iniciais" 
-                    Clicked="OnClickCadastrar"
+                    Command="{Binding ConfiguraDadosIniciaisCommand}"
                     HorizontalOptions="Center" 
                     VerticalOptions="Center" 
                     Margin="40" 
