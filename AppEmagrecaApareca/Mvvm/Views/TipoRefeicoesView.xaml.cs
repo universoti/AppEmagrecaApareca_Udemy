@@ -34,7 +34,7 @@ public partial class TipoRefeicoesView : ContentPage
     {
         //await Navigation.PushAsync(new TelaInicioView());
         //BindingContext = new TipoRefeicoesViewModel();
-        Shell.Current.GoToAsync("//TelaInicio");  ///arrumar depois não esta funcionando
+        Shell.Current.GoToAsync("//TelaInicioView");  ///arrumar depois não esta funcionando
     }
 
 	private async void AtualizaLista(object sender, EventArgs e)

@@ -75,7 +75,7 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
         [RelayCommand]
         private void Fechar()
         {
-            Shell.Current.GoToAsync("//TelaInicio");
+            Shell.Current.GoToAsync("//TelaInicioView");
         }
 
     }

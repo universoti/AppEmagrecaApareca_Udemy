@@ -63,7 +63,7 @@ namespace AppEmagrecaApareca.Mvvm.ViewModels
             {
                 Shell.Current.Navigation.RemovePage(stack[i]);
             }
-            Shell.Current.GoToAsync("//TelaInicio");
+            Shell.Current.GoToAsync("//TelaInicioView");
         }
 
     }
