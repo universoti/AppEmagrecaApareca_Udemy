@@ -5,6 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AppEmagrecaApareca"
     Shell.FlyoutBehavior="Flyout"
+    Shell.TitleColor="DarkSlateBlue"
+    Shell.FlyoutBackdrop="DarkSlateBlue"
+    Shell.ForegroundColor="DarkSlateBlue"
     Title="AppEmagrecaApareca">
 
     <ShellContent
