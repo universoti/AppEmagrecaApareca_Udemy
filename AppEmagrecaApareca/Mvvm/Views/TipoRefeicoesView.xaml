@@ -2,41 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEmagrecaApareca.TipoRefeicoesView"
-             Title="TipoRefeicoes">
+             Title="Tipo de Refeicoes">
 
     <RefreshView  Command="{Binding AtualizarTelaCommand}" IsRefreshing="{Binding IsRefreshing}"  Loaded="AtualizaLista">
         <VerticalStackLayout Margin="10">
-            <Label 
-        Text="Cadastre os tipos de refeições diárias!"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
-
-
-            <ScrollView  Orientation="Vertical">
-                <ListView x:Name="lTipoRefeicoes" ItemsSource="{Binding ListarTipoRefeicao}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding DsTipoRefeicao}"
-                               Detail="{Binding Id}">
-
-                            </TextCell>
-
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-
-                </ListView>
-            </ScrollView>
-              
-           
             
-            
+
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                <Button x:Name="Novo" Text="Novo" Clicked="OnClickCadastrar" Margin="10"/>
-                <Button x:Name="editar" Text="Alterar/Vizualizar" Clicked="OnAlterar" Margin="10"/>
-                <Button x:Name="InicioBtn" Text="Início" Clicked="OnInicio" Margin="10"/>
+                <Button x:Name="Novo" ImageSource="botao_mais.jpg" MaximumHeightRequest="95" Background="White" Clicked="OnClickCadastrar"  HorizontalOptions="Start"/>
+                <Button x:Name="editar" ImageSource="botao_atualizar.jpg" MaximumHeightRequest="95" Background="White" Clicked="OnAlterar" HorizontalOptions="End"/>
+                <Button x:Name="InicioBtn" ImageSource="botao_home.jpg" MaximumHeightRequest="95" Background="White" Clicked="OnInicio" HorizontalOptions="End"/>
 
             </HorizontalStackLayout>
 
+            <ScrollView  Orientation="Vertical">
+                <VerticalStackLayout Margin="10" SemanticProperties.HeadingLevel="Level1">
+                    <Label Text="Cadastre os tipos de refeições diárias!" TextColor="Green" FontAttributes="Bold" Margin="5" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <ListView x:Name="lTipoRefeicoes" ItemsSource="{Binding ListarTipoRefeicao}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding DsTipoRefeicao}"
+                                          Detail="{Binding Id}">
+
+                                </TextCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+                </VerticalStackLayout>
+               
+            </ScrollView>
+             
         </VerticalStackLayout>
     </RefreshView>
     

@@ -57,6 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\botao_atualizar.jpeg" />
+	  <None Remove="Resources\Images\botao_home.jpeg" />
+	  <None Remove="Resources\Images\botao_mais.png" />
 	  <None Remove="Resources\Images\cardapiomaui.png" />
 	  <None Remove="Resources\Images\configuracoes.png" />
 	  <None Remove="Resources\Images\emagrecaapareca.png" />

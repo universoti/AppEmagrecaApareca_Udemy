@@ -5,14 +5,21 @@
              Title="Cardápio">
     <RefreshView Loaded="AtualizaLista" Command="{Binding AtualizarTelaCommand}" IsRefreshing="{Binding IsRefreshing}">
         <VerticalStackLayout Margin="10">
-            <Label 
-        Text="Bem vindo ao seu cardápio diário!"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+          
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Button x:Name="NovoBtn" MaximumHeightRequest="85" Background="White"  ImageSource="botao_mais.jpg"  Clicked="OnClickCadastrar" HorizontalOptions="Start"/>
+                <Button x:Name="AlterarBtn" MaximumHeightRequest="85"  Background="White" ImageSource="botao_atualizar.jpg" Clicked="OnAlterar" HorizontalOptions="End"/>
+                <Button x:Name="InicioBtn" MaximumHeightRequest="85"  Background="White" ImageSource="botao_home.jpg" Clicked="OnInicio" HorizontalOptions="End"/>
 
+            </HorizontalStackLayout>
+            
             <ScrollView Orientation="Vertical" IsEnabled="True" HeightRequest="700">
-                <VerticalStackLayout Margin="10">
+                <VerticalStackLayout Margin="10"  SemanticProperties.HeadingLevel="Level1">
+                    <Label Text="Bem vindo ao seu cardápio diário!" TextColor="Green" FontAttributes="Bold" Margin="10"  VerticalOptions="Center" HorizontalOptions="Center" />
                     <ListView x:Name="lprodutos" ItemsSource="{Binding ListarProdutos}">
+                        <ListView.Header>
+                            <Label Text="Descrição-Calorias" TextColor="DarkBlue" FontAttributes="Bold" Margin="15"  VerticalOptions="Center" HorizontalOptions="Center" />
+                        </ListView.Header>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding Nome}"  Detail="{Binding Calorias}" >
@@ -24,12 +31,7 @@
                 </VerticalStackLayout>
                 
             </ScrollView>
-            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                <Button x:Name="NovoBtn" Text="Novo" Clicked="OnClickCadastrar"  Margin="10"/>
-                <Button x:Name="AlterarBtn" Text="Alterar/Vizualizar"  Clicked="OnAlterar" Margin="10"/>
-                <Button x:Name="InicioBtn" Text="Início" Clicked="OnInicio" Margin="10"/>
-
-            </HorizontalStackLayout>
+            
 
         </VerticalStackLayout>
     </RefreshView>

@@ -5,7 +5,7 @@
              Title="Início">
     <VerticalStackLayout BackgroundColor="White">
         
-        <VerticalStackLayout BackgroundColor="DarkSlateBlue" HeightRequest="190">
+        <VerticalStackLayout Margin="10" BackgroundColor="DarkSlateBlue" HeightRequest="190">
             <Label  
                 Margin="62"
                 Text="Bem vindo ao Emagreça e Apareça!"
@@ -28,7 +28,7 @@
         <VerticalStackLayout Margin="10"  BackgroundColor="DarkSlateBlue" HeightRequest="150">
             <Label  
                  Margin="50"
-                 Text="Bem vindo ao Emagreça e Apareça!"
+                 Text="Controle suas calorias!"
                   FontSize="Subtitle"
                   VerticalOptions="Center"
                   HorizontalOptions="Center"
